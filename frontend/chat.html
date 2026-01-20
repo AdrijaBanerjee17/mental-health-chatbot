@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <button onclick="resetChat()" style="margin-bottom:10px;">
+    Clear Chat
+</button>
+
+    <meta charset="UTF-8">
+    <title>MindCare Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <h2>🌱 MindCare</h2>
+    <ul>
+        <li class="active" onclick="showSection('chat', this)">Dashboard</li>
+        <li onclick="showSection('about', this)">About</li>
+        <li onclick="showSection('care', this)">Self-Care</li>
+        <li onclick="goHome()">Exit</li>
+    </ul>
+</div>
+
+
+<!-- Main Content -->
+<div class="main">
+
+    <!-- Chat Section -->
+    <div id="chat" class="section">
+        <h2>💬 Talk to MindCare</h2>
+        <div class="chat-card">
+            <div id="chat-box"></div>
+
+            <div class="input-area">
+                <input 
+    type="text" 
+    id="user-input" 
+    placeholder="Type how you feel..." 
+    onkeydown="handleEnter(event)" 
+/>
+
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="section hidden">
+        <h2>💙 About MindCare</h2>
+        <p>
+            MindCare provides emotional support using AI-driven sentiment
+            analysis. It is not a replacement for professional therapy,
+            but a friendly companion when you need to talk.
+        </p>
+    </div>
+
+    <!-- Self-Care Section -->
+    <div id="care" class="section hidden">
+        <h2>🌿 Self-Care Tips</h2>
+        <ul>
+            <li>🧘 Deep breathing for 2 minutes</li>
+            <li>🚶 Short mindful walk</li>
+            <li>📓 Write one positive thought</li>
+            <li>🎵 Listen to calming music</li>
+        </ul>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="nav.js"></script>
+</body>
+</html>
